@@ -1,0 +1,38 @@
+server:
+  port: 8089
+  max-http-header-size: 102400
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.16.23.39:3306/javademo1?useUnicode=true&characterEncoding=utf-8&useSSL=true&autoReconnect=true&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456
+  thymeleaf:
+      enabled: true
+      encoding: utf-8
+      mode: HTML
+      prefix: classpath:/templates/
+      suffix: .html
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 8192
+      max-file-size: 1048576
+      max-request-size: 5242880
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static/
+#  redis:
+#    host: 192.168.67.128
+#    port: 6379
+#    password: yueji
+#    timeout: 100000
+#    jedis:
+#      pool:
+#        max-active: 20
+#        max-idle: 5
+#        min-idle: 1
+mybatis:
+  type-aliases-package: com.javademo.entity.character
+  mapper-locations: classpath:mapping/**/*Mapper.xml
