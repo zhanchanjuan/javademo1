@@ -23,16 +23,16 @@ spring:
     static-path-pattern: /static/**
   resources:
     static-locations: classpath:/static/
-#  redis:
-#    host: 192.168.67.128
-#    port: 6379
-#    password: yueji
-#    timeout: 100000
-#    jedis:
-#      pool:
-#        max-active: 20
-#        max-idle: 5
-#        min-idle: 1
+  redis:
+    host: 172.16.23.39
+    port: 6379
+    password: yueji
+    timeout: 100000
+    jedis:
+      pool:
+        max-active: 20
+        max-idle: 5
+        min-idle: 1
 mybatis:
   type-aliases-package: com.javademo.entity.character
   mapper-locations: classpath:mapping/**/*Mapper.xml
