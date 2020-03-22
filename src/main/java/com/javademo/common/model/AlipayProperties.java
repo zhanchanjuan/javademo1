@@ -1,5 +1,6 @@
 package com.javademo.common.model;
 
+import com.javademo.common.exception.CommonException;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -50,7 +51,7 @@ public class AlipayProperties {
                 propertiesMap.put(key, (String) prop.get(key));
             }
         } catch (Exception e) {
-            new Exception("配置文件加载失败");
+            throw new CommonException("配置文件加载失败");
         }
     }
 

@@ -9,6 +9,7 @@ import com.javademo.common.model.*;
 import com.javademo.common.util.UserCommonUtil;
 import com.javademo.entity.system.AppUser;
 import com.javademo.entity.system.WeChatUserInfo;
+
 import com.javademo.service.ThirdPartyLoginService;
 import com.javademo.service.WeChatService;
 
@@ -44,8 +45,6 @@ public class WeChatServiceImpl implements WeChatService {
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
-    @Autowired
-    private ThirdPartyLoginService thirdPartyLoginService;
 
 
     /**
@@ -173,41 +172,41 @@ public class WeChatServiceImpl implements WeChatService {
                             state = state.substring(8);
                         }
                         WeChatUserInfo wechatUserInfo = getWeChatUserInfo(openid);
-                        AppUser appUser = thirdPartyLoginService.getUserInfoByThirdPartyUnionId(
-                                wechatUserInfo.getUnionid(),
-                                UserLoginType.USER_LOGIN_TYPE_WECHAT);
-                        if (null == appUser) {
-                            // 适配新迪数据用户，利用openid再查一次
-                            appUser = thirdPartyLoginService.getUserInfoByThirdPartyOpenId(
-                                    openid,
-                                    UserLoginType.USER_LOGIN_TYPE_WECHAT);
-                        }
-                        // 缓存第三方登录state与openid
-                        stringRedisTemplate.opsForValue().set(
-                                UserRedisConstants.KEY_THIRD_PARTY_LOGIN_STATE + state,
-                                openid,
-                                UserRedisConstants.EXPIRE_TIME_THIRD_PARTY_LOGIN_STATE,
-                                UserRedisConstants.TIME_UNIT_THIRD_PARTY_LOGIN_STATE);
-                        log.info("缓存第三方登录state信息:{}", state);
-                        if (appUser != null) {
-                            //已注册
-                            LoginDto loginDto = new LoginDto();
-                            loginDto.setUsername(appUser.getUsername());
-                            loginDto.setState(state);
-                            loginDto.setOpenid(openid);
-                            loginDto.setLoginType(UserLoginType.USER_LOGIN_TYPE_WECHAT.toString());
-//                            LoginReturnDto loginReturnDto = gateWayClient.thirdPartyLogin(loginDto).getData();  从网关调用登录信息接口，这个是在cloud里配置的网关模块的接口 boot项目用不了，后期再进行优化调整
-//                            dto.setLoginData(loginReturnDto);
-                            dto.setStatus(UserCommonConstants.THIRD_PARTY_REGISTER_STATUS_REGISTERED); // 已扫码已注册
+//                        AppUser appUser = thirdPartyLoginService.getUserInfoByThirdPartyUnionId(
+//                                wechatUserInfo.getUnionid(),
+//                                UserLoginType.USER_LOGIN_TYPE_WECHAT);
+//                        if (null == appUser) {
+//                            // 适配新迪数据用户，利用openid再查一次
+//                            appUser = thirdPartyLoginService.getUserInfoByThirdPartyOpenId(
+//                                    openid,
+//                                    UserLoginType.USER_LOGIN_TYPE_WECHAT);
+//                        }
+//                        // 缓存第三方登录state与openid
+//                        stringRedisTemplate.opsForValue().set(
+//                                UserRedisConstants.KEY_THIRD_PARTY_LOGIN_STATE + state,
+//                                openid,
+//                                UserRedisConstants.EXPIRE_TIME_THIRD_PARTY_LOGIN_STATE,
+//                                UserRedisConstants.TIME_UNIT_THIRD_PARTY_LOGIN_STATE);
+//                        log.info("缓存第三方登录state信息:{}", state);
+//                        if (appUser != null) {
+//                            //已注册
+//                            LoginDto loginDto = new LoginDto();
+//                            loginDto.setUsername(appUser.getUsername());
+//                            loginDto.setState(state);
+//                            loginDto.setOpenid(openid);
+//                            loginDto.setLoginType(UserLoginType.USER_LOGIN_TYPE_WECHAT.toString());
+////                            LoginReturnDto loginReturnDto = gateWayClient.thirdPartyLogin(loginDto).getData();  从网关调用登录信息接口，这个是在cloud里配置的网关模块的接口 boot项目用不了，后期再进行优化调整
+////                            dto.setLoginData(loginReturnDto);
+//                            dto.setStatus(UserCommonConstants.THIRD_PARTY_REGISTER_STATUS_REGISTERED); // 已扫码已注册
                         } else {
                             //未注册
-                            String newUserName = UserCommonUtil.generateUserName(wechatUserInfo.getNickname(),
-                                    UserLoginType.USER_LOGIN_TYPE_WECHAT.toString());
-                            wechatUserInfo.setRegisterName(newUserName);
-                            dto.setWechatUserInfo(wechatUserInfo);
-                            dto.setStatus(UserCommonConstants.THIRD_PARTY_REGISTER_STATUS_NOT_REGISTER); // 已扫码未注册
-                        }
-                        dto.setState(state);
+//                            String newUserName = UserCommonUtil.generateUserName(wechatUserInfo.getNickname(),
+//                                    UserLoginType.USER_LOGIN_TYPE_WECHAT.toString());
+//                            wechatUserInfo.setRegisterName(newUserName);
+//                            dto.setWechatUserInfo(wechatUserInfo);
+//                            dto.setStatus(UserCommonConstants.THIRD_PARTY_REGISTER_STATUS_NOT_REGISTER); // 已扫码未注册
+//                        }
+//                        dto.setState(state);
                     }
                 } else {
                     throw new CommonException("微信回调event为空");
