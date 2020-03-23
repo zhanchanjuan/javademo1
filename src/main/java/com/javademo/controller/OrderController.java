@@ -11,10 +11,9 @@ import com.alipay.api.AlipayApiException;
 
 
 /**
- * 订单接口
- * 
- * @author Louis
- * @date Dec 12, 2018
+ * 模拟订单接口
+ * @author shuyi
+ * @date 2020/3/22
  */
 @RestController()
 @RequestMapping("order")
@@ -24,7 +23,7 @@ public class OrderController {
 	private PayService payService;
 
 	/**
-	 * 阿里支付
+	 * Alipay支付
 	 * @param outTradeNo
 	 * @param subject
 	 * @param totalAmount
