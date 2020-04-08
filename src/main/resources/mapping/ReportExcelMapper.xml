@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javademo.entity.CmsCompanyBasics">
+    <select id="selectComInfoList" resultType="java.util.Map">
+        select
+        ccb.auth_id as authId,
+        ccb.company_id as companyId,
+        ccb.company_name as commpanyName,
+        ccb.business as business,
+        ccb.nature_code as natureCode,
+        ccb.industry_type as industryType,
+        ccb.auth_status as authStatus,
+        ccb.add_time as addTime
+        from cms_company_basics ccb where status=0
+    </select>
+
+</mapper>
