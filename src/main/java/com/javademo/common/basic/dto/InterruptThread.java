@@ -3,6 +3,7 @@ package com.javademo.common.basic.dto;
 /**
  * @author shuyi
  * @date 2020/4/9
+ * Interrupt 设置Interrupt，结束线程
  */
 public class InterruptThread extends Thread {
     @Override
