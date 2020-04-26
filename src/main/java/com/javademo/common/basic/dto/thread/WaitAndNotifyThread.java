@@ -1,4 +1,4 @@
-package com.javademo.common.basic.dto;
+package com.javademo.common.basic.dto.thread;
 
 /**
  * 模拟顾客买包子，老板做包子

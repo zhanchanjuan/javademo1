@@ -1,4 +1,4 @@
-package com.javademo.common.basic.dto;
+package com.javademo.common.basic.dto.thread;
 
 /**
  * 匿名测试类 测试

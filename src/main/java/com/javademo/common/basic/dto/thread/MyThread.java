@@ -1,4 +1,4 @@
-package com.javademo.common.basic.dto;
+package com.javademo.common.basic.dto.thread;
 
 /**
  * @author shuyi
