@@ -10,12 +10,18 @@ public class Lambda {
         new Thread(new Runnable(){
             @Override
             public void run() {
-                System.out.println(Thread.currentThread().getName()+"创建一个新线程");
+                System.out.println(Thread.currentThread().getName()+"111创建一个新线程");
             }
         }).start();
 
+        //Lambda表达式
         new Thread(()->{
-            System.out.println(Thread.currentThread().getName()+"创建一个新线程");
+            System.out.println(Thread.currentThread().getName()+"222创建一个新线程");
         }).start();
+
+        //简化Lambda表达式
+        new Thread(()->
+            System.out.println(Thread.currentThread().getName()+"111创建一个新线程")
+        ).start();
     }
 }
