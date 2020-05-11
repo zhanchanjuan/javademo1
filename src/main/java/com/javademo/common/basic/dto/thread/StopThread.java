@@ -16,7 +16,7 @@ public class StopThread extends Thread {
         System.out.println(Thread.currentThread().getName()+"线程开始运行");
         int i=0;
         while(interrupt){
-            System.out.println(""+(i++));
+            System.out.println("线程运行中----"+(i++));
         }
         System.out.println("停止！timer:"+System.currentTimeMillis());
     }

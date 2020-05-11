@@ -29,12 +29,12 @@ public class ThreadRunTest1 {
         * */
 //        Thread[] threads=new Thread[10];
 //        for(int i=0;i<threads.length;i++){
-//            threads[i]=new RandomThread("RandomThread线程名字"+i);
+//            threads[i]=new RandomThread("RandomThread线程名字111"+i);
 //            threads[i].start();
 //        }
 
         //获取main方法主线程的名称
-//        System.out.println(Thread.currentThread().getName());
+        System.out.println(Thread.currentThread().getName());
 
 
 
@@ -47,11 +47,11 @@ public class ThreadRunTest1 {
 //        }
 
         //以数组的形式，然后循环创建线程，循环启动线程
-//        Thread[] threads1=new Thread[3];
-//        for(int i=0;i<threads1.length;i++){
-//            threads1[i]=new Thread(runnable);
-//            threads1[i].start();
-//        }
+        Thread[] threads1=new Thread[3];
+        for(int i=0;i<threads1.length;i++){
+            threads1[i]=new Thread(runnable);
+            threads1[i].start();
+        }
         // 分别new-->创建3个线程，分别执行买票操作，加上synchronized修饰代码块，这样就避免出现重复买票或者卖出不合格的票
         Thread thread1=new Thread(runnable);
         Thread thread2=new Thread(runnable);
@@ -60,8 +60,5 @@ public class ThreadRunTest1 {
         thread2.start();
         thread3.start();
 
-
     }
-
-
 }

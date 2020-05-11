@@ -6,11 +6,8 @@ package com.javademo.common.basic.dto.thread;
  */
 public class ShareRunnable implements Runnable {
     private int count=5;
-
     private int ticket=100;
-
     Object obj=new Object();
-
     /**
      *synchronized 加上此关键字的方法称为互斥区或者临界区
      * 只有获取到这个关键字对应的锁才能执行方法体，方法体执行完自动会释放锁
@@ -22,7 +19,6 @@ public class ShareRunnable implements Runnable {
             payTicket();
         }
     }
-
     /*
     * 定义一个同步方法
     * */
