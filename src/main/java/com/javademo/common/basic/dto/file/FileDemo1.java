@@ -30,34 +30,37 @@ public class FileDemo1 {
 
 //        showType();
 
-        createFile();
+//        createFile();
+
+        createFileDelete();
     }
 
    //构造方法
     public static void savePath(){
         File f1=new File("E:\\application\\app-html\\operation_2期\\honeycomb_operation_system\\src\\api");
-        System.out.println("文件夹路径{}"+f1);
+        System.out.println("文件夹路径{}f1:"+f1);
     }
 
     public static void savePath2(String parent,String child){
         File f2=new File(parent,child);
-        System.out.println("父子文件组合路径{}"+f2);
+        System.out.println("父子文件组合路径{}f2:"+f2);
     }
 
     public static void savePath3(){
         File parent=new File("C:\\");
         File f3=new File(parent,"index.js");
-        System.out.println("无参组合的文件路径{}"+f3);
+        System.out.println("无参组合的文件路径{}f3:"+f3);
 
     }
 
     //常用方法
     public static  void showPath(){
-        File file=new File("F:\\projectdemo\\src\\main\\java\\com\\javademo\\common\\basic\\dto\\file\\FileDemo1.java");
+        File file=new File("F:\\projectdemo\\src\\main\\java\\com\\javademo\\common\\basic\\dto\\file\\Demo1.java");
         File file1=new File("FileDemo1.java");
-        //getAbsolutePath() 获取绝对路径
+        //getAbsolutePath() 获取绝对路径  这里有个疑问？？？不存在的文件；路径也是可以获取？？？还是new File()的时候写的什么就获取什么
         System.out.println(file.getAbsolutePath());
         System.out.println(file1.getAbsolutePath());
+        //getPath() 获取相对路径  --构建文件时的路径，相对根路径或者其他路径而展示的路径
         System.out.println(file.getPath());
         System.out.println(file1.getPath());
 
@@ -73,7 +76,7 @@ public class FileDemo1 {
     }
 
     public static void showType(){
-        File file3=new File("F:\\projectdemo\\src\\main\\java\\com\\javademo\\common\\basic\\dto");
+        File file3=new File("F:\\projectdemo\\src\\main\\java\\com\\javademo\\common\\basic\\dto\\file");
         //exists()判断文件和文件夹是否在此目录下存在
         System.out.println(file3.exists());
         //isFile()判断是否为文件
@@ -84,18 +87,24 @@ public class FileDemo1 {
 
 
     public static void createFile() throws IOException{
-        File file3=new File("F:\\projectdemo\\src\\main\\java\\com\\javademo\\common\\basic\\dto\\1.txt");
+        File file3=new File("F:\\projectdemo\\src\\main\\java\\com\\javademo\\common\\basic\\dto\\2.txt");
         //createNewFile(),在指定目录下创建文件，文件已经存在则创建不成功，创建的只能是文件，不能是文件夹
         Boolean result=file3.createNewFile();
         System.out.println("文件是否创建成功{}"+result);
 
         //如果我前面没有dto,用相对路径是可以创建成功的，但是我加上dto文件夹路径，就会抛出IO异常
 //        File file4=new File("dto\\2.txt");
-        File file4=new File("2.txt");
+        File file4=new File("3.txt");
         Boolean result2=file4.createNewFile();
         System.out.println("文件是否创建成功{}"+result2);
     }
 
+    public static void createFileDelete() throws IOException{
+        File f6=new File("F:\\study\\file");
+        
+
+
+    }
 
 
 

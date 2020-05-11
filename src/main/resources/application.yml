@@ -37,3 +37,12 @@ spring:
 mybatis:
   type-aliases-package: com.javademo.entity.character
   mapper-locations: classpath:mapping/**/*Mapper.xml
+
+file:
+  huaweiyun:
+    endpoint: https://obs.cn-east-2.myhuaweicloud.com #华为云链接的地址节点
+    access-key-id: CLX6MAVTXA1WBLKJFVI7
+    access-key-secret: iuj1QXzxdwDJ0JXDJK8aHpFbLazgS337RijFPMqu
+    bucket-name: njdeveloptest  #桶名
+    domain: https://njdeveloptestobs.zhizaoyun.wang
+    preview-time-out: 3600
