@@ -8,7 +8,7 @@ import org.junit.Test;
  */
 public class FileTest {
     @Test
-    void fileTest(){
+    public void fileTest(){
         System.out.println("测试开始执行啦");
     }
 }
