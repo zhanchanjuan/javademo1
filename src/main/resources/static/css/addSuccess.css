@@ -1,0 +1,269 @@
+.home{
+    width: 100%;
+}
+.home>.center{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.home>.center>.success{
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    height: 30px;
+    position: relative;
+}
+.home>.center>.success>img{
+    position: absolute;
+    left: 30px;
+    width: 30px;
+    height: 30px;
+}
+.home>.center>.success>p{
+    position: absolute;
+    display: block;
+    left: 70px;
+    font-size: 20px;
+    color: #000;
+    letter-spacing: 1px;
+    height: 30px;
+    line-height: 30px;
+}
+.home>.center>.cartItem{
+    margin-top: 20px;
+    margin-left: 30px;
+    display: block;
+    width: 100%;
+
+}
+.home>.center>.cartItem>a{
+    position: relative;
+    width: 100%;
+    height: 90px;
+    display: flex;
+}
+
+.home>.center>.cartItem>a>img{
+    width: 90px;
+    height: 90px;
+}
+.home>.center>.cartItem>a>.productName{
+    font: 12px;
+    margin-top: 30px;
+}
+
+.home>.center>.cartItem>a>.productCount{
+    position: absolute;
+    margin-top: 50px;
+    left: 95px;
+
+}
+.home>.center>.cartItem>a>.count{
+    position: absolute;
+    margin-top: 50px;
+    left: 130px;
+}
+.home>.center>.cartItem>a>.productPrice{
+    position: absolute;
+    margin-top: 65px;
+    left: 95px;
+}
+.home>.center>.cartItem>a>.price{
+    position: absolute;
+    margin-top: 65px;
+    left: 130px;
+}
+
+.home>.center>.remind{
+   display: inline;
+    position: relative;
+    margin-top: 15px;
+    border-bottom: #151515 2px solid;
+
+}
+.home>.center>.remind>.Prodetails,
+.home>.center>.remind>.Settlement{
+    width: 160px;
+    height: 35px;
+    position: absolute;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+.home>.center>.remind>.Prodetails{
+    left: 700px;
+    background-color: black;
+}
+.home>.center>.remind>.Settlement{
+    left: 870px;
+    background-color: red;
+}
+.home>.center>#cartLike{
+    width:100%;
+    height: 300px;
+    margin:70px 0 40px 0;
+}
+
+#cartLike>.guesslike-body{
+    /*background-color: skyblue;*/
+    display: flex;
+    flex-wrap: wrap;
+    border-top: #f7f7f7 1px solid;
+    border-left: #f7f7f7 1px solid;
+}
+#cartLike>.guesslike-body>div{
+    width:20%;
+    border-right: #f7f7f7 1px solid;
+    border-bottom: #f7f7f7 1px solid;
+}
+
+#cartLike>.guesslike-body>.guessbox>.imgtitle{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+}
+#cartLike>.guesslike-body>.guessbox{
+    position: relative;
+}
+#cartLike img{
+    position: absolute;
+    left: 20px;
+    width: 180px;
+    height: 180px;
+}
+#cartLike .guessyoulike-list-brand{
+    position: absolute;
+    left: 18px;
+    top:200px;
+    font-weight: bold;
+
+
+}
+#cartLike .imgtitle{
+    position: absolute;
+    left: 18px;
+    top:215px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#cartLike .guessyoulike-info-list-price{
+    position: absolute;
+    left: 18px;
+    top:240px;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+/*
+!* 品牌管理 *!
+.center .title-left{
+    width: 40%;
+    display: inline;
+    text-align: left;
+}
+.center .title{
+    font: normal bold 26px arial,"microsoft yahei" ;
+}
+
+.itemGoods{
+    width:82%;
+}
+.itemGoods>.itemCenter{
+    width: 100%;
+    display: flex;
+}
+
+.itemGoods>.itemCenter>.goodscCenter>.Prodetails{
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+    margin-left: 820px;
+    margin-top: 140px;
+    font-size: 18px;
+    position: absolute;
+}
+.itemGoods>.itemCenter>.goodscCenter>.Settlement{
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    background-color: #e00;
+    margin-left: 1000px;
+    margin-top: 140px;
+    font-size: 18px;
+    position: absolute;
+}
+
+!*猜你喜欢*!
+#guesslike>.youlike-body{
+    height: 270px;
+    !*background-color: skyblue;*!
+    display: flex;
+    flex-wrap: wrap;
+    border-top: #f7f7f7 1px solid;
+    border-left: #f7f7f7 1px solid;
+}
+#guesslike>.youlike-body>div{
+    height:261px ;
+    width:20%;
+    border-right: #f7f7f7 1px solid;
+    border-bottom: #f7f7f7 1px solid;
+}
+
+#guesslike>.youlike-body>.guessbox>.imgtitle{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+}
+#guesslike>.youlike-body>.guessbox{
+    position: relative;
+}
+
+#guesslike img{
+    position: absolute;
+    left: 20px;
+    width: 180px;
+    height: 180px;
+
+
+}
+
+#guesslike .guessyoulike-list-brand{
+    position: absolute;
+    left: 18px;
+    top:200px;
+    font-weight: bold;
+
+
+}
+#guesslike .imgtitle{
+    position: absolute;
+    left: 18px;
+    top:215px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#guesslike .guessyoulike-info-list-price{
+    position: absolute;
+    left: 18px;
+    top:240px;
+    font-size: 14px;
+}
+*/

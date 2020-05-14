@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>-应用商品页-</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+    <div class="home">
+        <div class="header">
+            <!--导航部分搜索框-->
+            <div class="headerSearchAll">
+                <div class="headerSearchList">
+                    <div class="headerSearch">
+                        <div class="headerSearchLift" >
+                            <h1 class="logo"></h1>
+                        </div>
+                        <div class="headerSearchcenter">
+                            <div class="searchBox">
+                                <input class="searchText" type="text" placeholder="图纸通"/>
+                                <input class="searchDefind" type="submit" value="搜索" />
+                            </div>
+                        </div>
+                        <div class="headerSearchRight">
+                            <a class="SearchShopping" href="cart.html">
+                                <span class="seShoppingImg"></span>
+                                <span class="seShoppingtext">
+									购物车
+									<span>
+										0
+									</span>
+									件
+								</span>
+                            </a>
+                            <!--导航隐藏部分购物车-->
+                            <div class="SearchShoppingList">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--导航栏部分-->
+            <div class="headerNavAll">
+                <div class="headerNav">
+                    <div class="headerNavListside">
+                        <dl class="navlistText">
+                            <dt class="navlistTexttext">全部商品类目</dt>
+                            <dd class="item-childs">
+
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="center">
+            <div id="guesslike" style="height: 500px !important;">
+                <div class="guesslike-title">
+                    <h1 class="title-left">
+                        <span class="title">商品列表</span>
+                    </h1>
+                </div>
+                <div class="guesslike-body" style="height: 100%;">
+                	<div class="guessbox">
+                        <div class="likeimg">
+                            <a target="_blank" rel="nofollow">
+                                <img src="img/3DSource.jpg" alt="">
+                            </a>
+                        </div>
+                        <a class="imgtitle" href="#">3Dsoure</a>
+                        <div class="guessyoulike-info-list-price">￥1000</div>
+                        <ul class="btn-numbox">
+							<li><span class="number">数量</span></li>
+							<li>
+								<ul class="count">
+									<li><span id="num-jian" class="num-jian">-</span></li>
+									<li><input type="text" class="input-num" id="input-num" value="0" /></li>
+									<li><span id="num-jia" class="num-jia">+</span></li>
+								</ul>
+							</li>
+						</ul>
+                      <input id="goodsId" class="goodsId" type="hidden" value="${glike.goodsId}">
+                    </div>
+                    <div class="guessbox">
+                        <div class="likeimg">
+                            <a target="_blank" rel="nofollow">
+                                <img src="img/tuzhitong.jpg" alt="">
+                            </a>
+                        </div>
+                         <a class="imgtitle" href="#">图纸通</a>
+                        <div class="guessyoulike-info-list-price">￥1888～￥2888</div>
+                        <ul class="btn-numbox">
+							<li><span class="number">数量</span></li>
+							<li>
+								<ul class="count">
+									<li><span id="num-jian" class="num-jian">-</span></li>
+									<li><input type="text" class="input-num" id="input-num" value="0" /></li>
+									<li><span id="num-jia" class="num-jia">+</span></li>
+								</ul>
+							</li>
+						</ul>              
+                      <input id="goodsId" class="goodsId" type="hidden" value="${glike.goodsId}">
+                    </div>
+                    <div class="guessbox">
+                        <div class="likeimg">
+                            <a target="_blank" rel="nofollow">
+                                <img src="img/technology.jpg" alt="">
+                            </a>
+                        </div>
+                        <a class="imgtitle" href="#">技术资源库</a>
+                        <div class="guessyoulike-info-list-price">￥1888～￥2888</div>
+                        <ul class="btn-numbox">
+							<li><span class="number">数量</span></li>
+							<li>
+								<ul class="count">
+									<li><span id="num-jian" class="num-jian">-</span></li>
+									<li><input type="text" class="input-num" id="input-num" value="0" /></li>
+									<li><span id="num-jia" class="num-jia">+</span></li>
+								</ul>
+							</li>
+						</ul>
+                      <input id="goodsId" class="goodsId" type="hidden" value="${glike.goodsId}">
+                    </div>
+                    <div class="guessbox">
+                        <div class="likeimg">
+                            <a target="_blank" rel="nofollow">
+                                <img src="img/diagnosis.jpg" alt="">
+                            </a>
+                        </div>
+                        <a class="imgtitle" href="#">诊断云</a>
+                        <div class="guessyoulike-info-list-price">￥1888～￥2888</div>
+                        <ul class="btn-numbox">
+							<li><span class="number">数量</span></li>
+							<li>
+								<ul class="count">
+									<li><span id="num-jian" class="num-jian">-</span></li>
+									<li><input type="text" class="input-num" id="input-num" value="0" /></li>
+									<li><span id="num-jia" class="num-jia">+</span></li>
+								</ul>
+							</li>
+						</ul>
+                      <input id="goodsId" class="goodsId" type="hidden" value="${glike.goodsId}">
+                    </div>
+                    <div class="guessbox">
+                        <div class="likeimg">
+                            <a target="_blank" rel="nofollow">
+                                <img src="img/3DSource.jpg" alt="">
+                            </a>
+                        </div>             
+                        <a class="imgtitle" href="#">电子看板</a>
+                        <div class="guessyoulike-info-list-price">￥1888～￥2888</div>
+                        <ul class="btn-numbox">
+							<li><span class="number">数量</span></li>
+							<li>
+								<ul class="count">
+									<li><span id="num-jian" class="num-jian">-</span></li>
+									<li><input type="text" class="input-num" id="input-num" value="0" /></li>
+									<li><span id="num-jia" class="num-jia">+</span></li>
+								</ul>
+							</li>
+						</ul>
+                      <input id="goodsId" class="goodsId" type="hidden" value="${glike.goodsId}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="buy" style="width: 100px;height: 40px;line-height: 40px;text-align: center;background-color: lightskyblue;color: white;margin: 0 auto;">
+	购买
+</div>
+
+<script src="/goodsCart/js/jquery-3.2.1.min.js"></script>
+        <script>
+		        $(".num-jia").bind("click", function() {
+		        	var index = $(this).index(".num-jia");
+		        	$(".input-num").eq(index).get(0).value = parseInt($(".input-num").eq(index).get(0).value) + 1;
+		        })
+		        
+		        $(".num-jian").bind("click", function() {
+		        	var index = $(this).index(".num-jian");
+		        	if($(".input-num").eq(index).get(0).value == 0) {
+		        		return;
+		        	}
+		        	$(".input-num").eq(index).get(0).value = parseInt($(".input-num").eq(index).get(0).value) - 1;
+		        })
+		        
+		        $("#buy").bind("click", function() {
+		        	var tempObj = {};
+		        	tempObj.no = Math.random();
+		        	tempObj.desc = "1213231";
+		        	tempObj.goodsDetail = [];
+		        	for(var i=0;i<$(".guessbox").length;i++) {
+		        		let val = parseInt($(".guessbox").eq(i).find(".input-num").get(0).value);
+		        		let txt = $(".guessbox").eq(i).find(".imgtitle").get(0).innerHTML;
+		        		if(val > 0) {
+		        			tempObj.goodsDetail.push({count: val, name: txt});
+		        		}
+		        	}
+		        	console.log(tempObj.goodsDetail);
+		        	window.applyFunc.buy(JSON.stringify(tempObj));
+		        })
+        </script>
+</body>
+</html>

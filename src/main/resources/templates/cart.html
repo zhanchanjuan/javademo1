@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>立即支付</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="css/zuchechenggong.css"/>-->
+		<link rel="stylesheet" type="text/css" href="css/xiala.css"/>
+		<link rel="stylesheet" type="text/css" href="css/cart.css"/>
+	</head>
+	<body>
+		
+		<header class="header">
+			<div class="headerTopAll">
+				<div class="headerTop" >
+					<div class="headerTopLeft">
+						<ul class="headerTopLeftList">
+							<li class="Welcome"><a href="#">购物车页面</a></li>
+							<li>
+								<a class="signIn" href="#">已登录</a>
+								<span class="topLine">|</span>
+								<a class="register" href="#">免费注册</a>
+							</li>
+							<li class="phoneRegister"><a href="#">手机码验证码登录</a></li>
+						</ul>
+					</div>
+					<div class="headerTopCenter">
+						<div class="genuineCommitmen"><a href="#">丝芙兰正品承诺</a></div>
+					</div>
+					<div class="headerTopRight">
+						<ul class="headerTopRightList">
+							<li class="topRightOne">
+								<span class="TopRightImg"></span>
+								<a href="#">我的悦已</a>
+								<span class="TopRightArrow" ></span>
+							</li>
+							<li class="topRightTwo">
+								<span class="TopRightImg2"></span>
+								<a href="#">会员俱乐部</a>
+							</li>
+							<li class="topRightThree">
+								<span class="TopRightImg3"></span>
+								<a href="#">手机悦己</a>
+							</li>
+							<li class="topRightFour"><a href="#">美力事业</a></li>
+							<li class="topRightFive"><a href="#">帮助中心</a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		
+		</header>
+		<!--您的购物车清单如含近效期产品，该近效期产品不支持7天无理由退货，近效期产品为页面有特别标示有效期信息的产品。-->
+		<article class="box">
+			<!--我的购物车购物-->
+				<section class="search-Box">
+					<nav class ="nav-box">
+						<div class="bu">
+							<div class ="nav-box-da">
+								<div class ="nav-box-left">
+									<img src="/static/img/sep_top_Logo.png" alt="" />
+								</div>
+							
+								<div class ="nav-box-ritht">
+									<div class="bianse">
+										<img src="/static/img/屏幕快照 2019-05-15 上午11.50.17.png" alt="" />
+										<a>1.我的购物车</a>
+										<p></p>
+									</div>
+									<div class ="bianse">
+										<img src="/static/img/屏幕快照 2019-05-15 上午11.50.22.png" alt="" />
+										<a>2.添写核对订单信息</a>
+										<p></p>
+									</div>
+									<div class ="bianse hh">
+										<img src="/static/img/屏幕快照 2019-05-15 上午11.50.17.png" alt="" />
+										<a>3.成功提交订单</a>
+										<p></p>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						
+					</nav>
+				</section>
+				<!--您的购物车清单如-->
+				<article class="articl-ebox1">
+					<a href="">您的购物车清单如含近效期产品，该近效期产品不支持7天无理由退货，近效期产品为页面有特别标示有效期信息的产品。</a>
+				</article>
+				
+				<!--商品信息-->
+				<article class="articl-ebox3">
+					<div class="jiao4 xian">
+						<div class="jiao4-1" >
+							<input type="button" name="" id="option" />全选<label for=""></label>
+						</div>
+						<div class="jiao4-2" >
+							<a class="jiao4-3">商品信息</a>
+							<a>单价(元)</a>
+							<a>数量</a>
+							<a>小计(元)</a>
+							<a>操作</a>
+						</div>
+					</div>
+					<div id="xian">
+						
+					</div>
+					<div class="jiao4 gao" th:object="${cart}">
+						<div class="jiao4-1">
+							<input type="button" name="" value="全选">
+							<img  height="70px" width="60px" th:src="*{src}" alt="" />
+						</div>
+						<div class="jiao4-2">
+							<div class="h1">
+								<p class="goodsName" th:text="*{goodsName}">/p>
+							</div>
+							<div class="price" th:text="*{price}"></div>
+							<div class="ziti5">
+								<!--<span class="sc-count">
+                    				<button @click="change(item,false)" class="btn-ctl" :class="item.count<=1?'disable':''" :disable="item.count<=1">-</button>
+                   				 	<span class="proCount" th:text="*{proCount}"></span>
+                   				 	<button @click="change(item,true)" class="btn-ctl">+</button>
+                				</span>-->
+								<span >-</span>
+								<span class="proCount" th:text="*{proCount}"></span>
+								<span>+</span>
+							</div>
+							<div class="total" th:text="*{total}">320.00</div>
+							<div class="tu" id="remove">
+								<img src="/static/img/屏幕快照 2019-05-20 上午10.11.25.png" alt="" />
+							</div>
+						</div>
+
+					</div>
+				</article>
+
+				<article class="articl-ebox7">
+					<div class="di-1">
+						<a href="">
+							<input type="checkbox" name="" id="di-1-kuanluang" value=""/><label for="">全选</label>
+						</a>
+						<a href="">批量删除</a>
+						<a href="">|</a>
+						<div id="beijing">
+							<a href="">联系客服</a>
+							<img height="15px" width="15px" src="img/3DSource.jpg"/>
+						</div>
+					</div>
+					<div class="di-2">
+							<div class="articl-ebox7-2-2">
+								<div id="h-h1">
+									<a href="">已选</a>
+									<a href="">1</a>
+									<a href="">件商品,</a>
+									<a href="">合计:</a>
+									<a href="">¥320.00</a>
+								</div>
+								<div class="h3">
+									<a href="">商品总额:</a>
+									<a href="">¥320.00</a>
+									<input class="img" type="image" src="img/3DSource.jpg" />
+									<!--<a class="img1" href=""></a>-->
+									<a href="">共节省:</a>
+									<a href="">¥0.00</a>
+								</div>
+							</div>
+							<div class="red">
+								<a href="">立即结算</a>
+							</div>
+					</div>
+						
+							
+				</article>
+			
+			
+		</article>
+		
+		
+		<!--尾部-->
+		<footer class="footerList">
+			<div class="footer-info">
+				<div class="footer-info-list">
+					<div class="footer-info-icon">
+						<div class="footer-info-icon-a"></div>
+						<span>顺丰EMS速达</span>
+					</div>
+					<span class="fooeter-lines"></span>
+					
+					<div class="footer-info-icon">
+						<div class="footer-info-icon-b"></div>
+						<span>顺丰EMS速达</span>
+					</div>
+					<span class="fooeter-lines"></span>
+					
+					<div class="footer-info-icon">
+						<div class="footer-info-icon-c"></div>
+						<span>顺丰EMS速达</span>
+					</div>
+					<span class="fooeter-lines"></span>
+					
+					<div class="footer-info-icon">
+						<div class="footer-info-icon-d"></div>
+						<span>顺丰EMS速达</span>
+					</div>
+					<span class="fooeter-lines"></span>
+					
+					<div class="footer-info-icon">
+						<div class="footer-info-icon-e"></div>
+						<span>顺丰EMS速达</span>
+					</div>
+				</div>
+				<div class="footerCenterLine"></div>
+				<div class="footer-map">
+					<ul class="footer-map-List">
+						<li class="footer-map-text">
+							<a class="map-text1" href="#">
+								<span>购物流程</span>
+							</a>
+							<a class="map-text" href="#">
+								<span>大宗采购/团购</span>
+							</a>
+							<a class="map-text" href="#">
+								<span>丝芙兰预付卡章程</span>
+							</a>
+						</li>
+						<li class="footer-map-text">
+							<a class="map-text1" href="#">
+								<span>支付/配送</span>
+							</a>
+							<a class="map-text" href="#">
+								<span>货到付款</span>
+							</a>
+							<a class="map-text" href="#">
+								<span>在线支付</span>
+							</a>
+							<a class="map-text" href="#">
+								<span>配送时间</span>
+							</a>
+						</li>
+						<li class="footer-map-text">
+							<a class="map-text1" href="#">
+								<span>售后服务</span>
+							</a>
+							<a class="map-text" href="#">
+								<span>退换货规定</span>
+							</a>
+							<a class="map-text" href="#">
+								<span>退换及退款说明</span>
+							</a>
+						</li>
+						<li class="footer-map-text">
+							<a class="map-text1" href="#">
+								<span>关于悦已</span>
+							</a>
+							<a class="map-text" href="#">
+								<span>公司介绍</span>
+							</a>
+							<a class="map-text" href="#">
+								<span>联系我们</span>
+							</a>
+							
+						</li>
+						
+						<li class="footer-map-text">
+							<a class="map-text1" href="#">
+								<span>网上订购咨询热线 :400 670 0055</span>
+							</a>
+							<a class="map-text" href="#">
+								
+							</a>
+							<a class="map-text" href="#">
+								
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer-declaration">
+					<div class="footer-declarationL-List">
+						<ul class="declarationL-List-text">
+							<li class="declarationL-List-text0">
+								<a href=""><img src="/static/img/footer-redords-icon.png"/>沪公网安备 31010602003121号</a>
+								<a href="">ICP备案序号:沪ICP备05026645号</a>
+								<a href="">食品经营许可证</a>
+								<a href="">网站使用条款</a>
+								<a href="">严正声明</a>
+							</li>
+							<li class="declarationL-List-text1">
+								<a href="">本网站隶属于丝芙兰（上海）化妆品销售有限公司<span>(企业法人营业执照)</span></a>
+							</li>
+						</ul>
+						
+					</div>
+					
+				</div>
+			</div>
+			
+		</footer>
+
+	  <script src="/static/js/jquery-3.2.1.min.js"></script>
+	  <script src="/static/js/com.js"></script>
+	  <script>
+
+	  </script>
+		
+	</body>
+</html>

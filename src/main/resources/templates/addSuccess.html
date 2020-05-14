@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>-YUEJI悦己官网--欢迎访问-</title>
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/addSuccess.css">
+    </head>
+<body>
+
+    <div class="home">
+        <div class="header">
+            <div class="headerTopAll">
+                <div class="headerTop" >
+                    <div class="headerTopLeft">
+                        <ul class="headerTopLeftList">
+                            <li class="Welcome"><span>欢迎来悦己</span></li>
+                            <li>
+                                <a class="signIn" id="login">已登录</a>
+                                <span class="topLine">|</span>
+                                <a class="register" id="addVip">退出</a>
+                            </li>
+                            <li class="phoneRegister"><a href="#">手机码验证码登录</a></li>
+                        </ul>
+                    </div>
+                    <div class="headerTopCenter">
+                        <div class="genuineCommitmen"><a href="#">悦己正品承诺</a></div>
+                    </div>
+                    <div class="headerTopRight">
+                        <ul class="headerTopRightList">
+                            <li class="topRightOne">
+                                <span class="TopRightImg"></span>
+                                <a href="/page/order">我的悦已</a>
+                                <span class="TopRightArrow" ></span>
+                            </li>
+                            <li class="topRightTwo">
+                                <span class="TopRightImg2"></span>
+                                <a href="#">会员俱乐部</a>
+                            </li>
+                            <li class="topRightThree">
+                                <span class="TopRightImg3"></span>
+                                <a href="#">手机悦己</a>
+                            </li>
+                            <li class="topRightFour"><a href="#">美力事业</a></li>
+                            <li class="topRightFive"><a href="#">帮助中心</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!--导航部分搜索框-->
+            <div class="headerSearchAll">
+                <div class="headerSearchList">
+                    <div class="headerSearch">
+                        <div class="headerSearchLift" >
+                            <h1 class="logo"><img src="/static/img/TIM图片20190806102901.jpg"/></h1>
+                        </div>
+                        <div class="headerSearchcenter">
+                            <div class="searchBox">
+                                <input class="searchText" type="text" placeholder="口碑女士香氛"/>
+                                <input class="searchDefind" type="submit" value="搜索" />
+                            </div>
+                            <div class="searchBoxText">
+                                <a href="#">换季护肤</a>
+                                <a href="#">热门防晒盘点</a>
+                                <a href="#">邂逅春日香氛</a>
+                                <a href="#">经典口碑精华</a>
+                                <a href="#">唇色星光</a>
+                                <a href="#">春日奇思妙香</a>
+                            </div>
+                        </div>
+                        <div class="headerSearchRight">
+                            <a class="SearchShopping" href="cart.html">
+                                <span class="seShoppingImg"></span>
+                                <span class="seShoppingtext">
+                                        购物车
+                                        <span>
+                                            0
+                                        </span>
+                                        件
+                                    </span>
+                            </a>
+                            <!--导航隐藏部分购物车-->
+                            <div class="SearchShoppingList">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="headerNavAll">
+                <div class="headerNav">
+                    <div class="headerNavListside">
+                        <dl class="navlistText">
+                            <dt class="navlistTexttext">全部商品类目</dt>
+                            <dd class="item-childs">
+
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="headerNavListNav">
+                        <ul class="headerNavListNavText">
+                            <li><a href="#">畅销榜单</a></li>
+                            <li><a href="">独家发售</a></li>
+                            <li><a href="">礼物套装</a></li>
+                            <li><a href="">全部品牌</a></li>
+                        </ul>
+                    </div>
+                    <div class="headerNavImg">
+                        <img src="/static/img/navigation_shopping.png"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="center">
+            <div class="success">
+                <img src="/static/img/success1.png">
+                <p>已成功加入购物车</p>
+            </div>
+            <div class="cartItem">
+                <a class="product" th:object="${goods}">
+                    <img th:src="*{src}"/>
+                    <div class="productName" th:text="*{goodsName}"></div>
+                    <div class="productPrice">价格:</div>
+                    <p class="price" th:text="*{priceBegin}"></p>
+                    <div class="productCount">数量：</div>
+                    <p class="count">1件</p>
+                </a>
+            </div>
+            <div class="remind">
+                <a href="/page/prodetails" class="Prodetails">查看商品详情</a>
+
+                <a  href="staticCart.html" class="Settlement">去购物车结算</a>
+            </div>
+
+            <div id="cartLike">
+                <div class="cartlike-title">
+                    <h1 class="title-left">
+                        <span class="title">猜你喜欢 GUESSLIKE</span>
+                    </h1>
+                </div>
+                <div class="guesslike-body">
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-info">
+                <div class="footer-info-list">
+                    <div class="footer-info-icon">
+                        <div class="footer-info-icon-a"></div>
+                        <span>顺丰EMS速达</span>
+                    </div>
+                    <span class="fooeter-lines"></span>
+
+                    <div class="footer-info-icon">
+                        <div class="footer-info-icon-b"></div>
+                        <span>顺丰EMS速达</span>
+                    </div>
+                    <span class="fooeter-lines"></span>
+
+                    <div class="footer-info-icon">
+                        <div class="footer-info-icon-c"></div>
+                        <span>顺丰EMS速达</span>
+                    </div>
+                    <span class="fooeter-lines"></span>
+
+                    <div class="footer-info-icon">
+                        <div class="footer-info-icon-d"></div>
+                        <span>顺丰EMS速达</span>
+                    </div>
+                    <span class="fooeter-lines"></span>
+
+                    <div class="footer-info-icon">
+                        <div class="footer-info-icon-e"></div>
+                        <span>顺丰EMS速达</span>
+                    </div>
+                </div>
+                <div class="footerCenterLine"></div>
+                <div class="footer-map">
+                    <ul class="footer-map-List">
+                        <li class="footer-map-text">
+                            <a class="map-text1" href="#">
+                                <span>购物流程</span>
+                            </a>
+                            <a class="map-text" href="#">
+                                <span>大宗采购/团购</span>
+                            </a>
+                            <a class="map-text" href="#">
+                                <span>丝芙兰预付卡章程</span>
+                            </a>
+                        </li>
+                        <li class="footer-map-text">
+                            <a class="map-text1" href="#">
+                                <span>支付/配送</span>
+                            </a>
+                            <a class="map-text" href="#">
+                                <span>货到付款</span>
+                            </a>
+                            <a class="map-text" href="#">
+                                <span>在线支付</span>
+                            </a>
+                            <a class="map-text" href="#">
+                                <span>配送时间</span>
+                            </a>
+                        </li>
+                        <li class="footer-map-text">
+                            <a class="map-text1" href="#">
+                                <span>售后服务</span>
+                            </a>
+                            <a class="map-text" href="#">
+                                <span>退换货规定</span>
+                            </a>
+                            <a class="map-text" href="#">
+                                <span>退换及退款说明</span>
+                            </a>
+                        </li>
+                        <li class="footer-map-text">
+                            <a class="map-text1" href="#">
+                                <span>关于悦已</span>
+                            </a>
+                            <a class="map-text" href="#">
+                                <span>公司介绍</span>
+                            </a>
+                            <a class="map-text" href="#">
+                                <span>联系我们</span>
+                            </a>
+
+                        </li>
+                        <li class="footer-map-text">
+                            <a class="map-text1" href="#">
+                                <span>网上订购咨询热线 :400 670 0055</span>
+                            </a>
+                            <a class="map-text" href="#">
+                            </a>
+                            <a class="map-text" href="#">
+                            </a>
+                        </li>
+                        <li class="box">
+                            <a class="box1"></a>
+                            <a class="box1"></a>
+                            <a class="box1"></a>
+                            <a class="box1"></a>
+                            <a class="box1"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-declaration">
+                    <div class="footer-declarationL-List">
+                        <ul class="declarationL-List-text">
+                            <li class="declarationL-List-text0">
+                                <a href=""><img src="/static/img/footer-redords-icon.png"/>沪公网安备 31010602003121号</a>
+                                <a href="">ICP备案序号:沪ICP备05026645号</a>
+                                <a href="">食品经营许可证</a>
+                                <a href="">网站使用条款</a>
+                                <a href="">严正声明</a>
+                            </li>
+                            <li class="declarationL-List-text1">
+                                <a href="">本网站隶属于丝芙兰（上海）化妆品销售有限公司<span>(企业法人营业执照)</span></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script src="/static/js/jquery-3.2.1.min.js"></script>
+        <script src="/static/js/com.js"></script>
+        <!--<script src="/static/js/zcj/addGoods.js"  type="text/javascript"  charset="GB2312"></script>-->
+
+        <script>
+
+            /*猜你喜欢品类带值*/
+            function gLike(glike) {
+                return`<div class="guessbox">
+                            <div class="likeimg">
+                                <a target="_blank" rel="nofollow">
+                                    <img src="${glike.src}" alt="">
+                                </a>
+                            </div>
+                            <div class="guessyoulike-list-brand">${glike.brandEn}</div>
+                            <a class="imgtitle" href="#">${glike.goodsName}</a>
+                            <div class="guessyoulike-info-list-price">￥${glike.priceBegin}～￥${glike.priceEnd}</div>
+                          <input id="goodsId" class="goodsId" type="hidden" value="${glike.goodsId}">
+                        </div>`;
+            }
+            $.axcall("/cart/youlike",$.method.F,{},function (data) {
+                console.log(data)
+                data.goods.forEach(function (data) {
+                    gLike(data);
+                    $(".guesslike-body").append(gLike(data));
+                })
+
+            })
+          /*  $("#addVip").click(function () {
+                window.location.href = "/r/register";
+            });*/
+          /*从加入购物车成功页面，查询redis和数据库，查出加入数据库的商品信息，带到购物车页面并显示*/
+            function toString(obj){
+                let arr = [];
+                for(let key in obj){
+                    arr.push(key+"="+obj[key])
+                }
+                return arr.join("&")
+            }
+
+            $(".Settlement").on("click",function () {
+                $.getVipid(function (phone) {
+                    let param = {
+                        phone: phone,
+                        proCount: 1,
+                        total: parseFloat($("#price").text())
+                    };
+                    console.log(param);
+                    $.axcall("/cart/getCart", $.method.A, param, function (data) {
+                        window.location.href = "/page/cart?" + toString();
+
+                    })
+
+            })
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+    </body>
+</html>
