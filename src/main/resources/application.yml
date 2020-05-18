@@ -7,6 +7,12 @@ spring:
     url: jdbc:mysql://172.16.23.181:3306/honeycomb_goods?useUnicode=true&characterEncoding=utf-8&useSSL=true&autoReconnect=true&zeroDateTimeBehavior=convertToNull
     username: root
     password: 123456
+  rabbitmq:
+    host: 172.0.0.1
+    port: 5672
+    username: rabtest
+    password: rabtest
+    virtual-host: /
   thymeleaf:
       enabled: true
       encoding: utf-8
