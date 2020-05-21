@@ -15,7 +15,7 @@ import com.alipay.api.AlipayApiException;
  * @author shuyi
  * @date 2020/3/22
  */
-@RestController()
+@RestController
 @RequestMapping("order")
 public class OrderController {
 

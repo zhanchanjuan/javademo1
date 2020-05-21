@@ -6,8 +6,7 @@ import com.javademo.common.constants.UserLoginType;
 import com.javademo.common.constants.UserRedisConstants;
 import com.javademo.common.exception.CommonException;
 import com.javademo.common.model.*;
-import com.javademo.common.util.UserCommonUtil;
-import com.javademo.entity.system.AppUser;
+
 import com.javademo.entity.system.WeChatUserInfo;
 
 import com.javademo.service.ThirdPartyLoginService;
