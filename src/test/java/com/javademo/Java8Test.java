@@ -58,7 +58,6 @@ public class Java8Test {
         User user = new User("anna@gmail.com", "1234");
         Optional<User> result = Optional.ofNullable(user)
                 .filter(u -> u.getEmail() != null && u.getEmail().contains("@"));
-
         assertTrue(result.isPresent());
     }
 

@@ -1,4 +1,4 @@
-package com.javademo.util;
+package com.javademo.common.util;
 
 import com.javademo.common.exception.CommonException;
 

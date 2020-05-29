@@ -1,7 +1,6 @@
 package com.javademo.common.basic.dto.file;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 /**
  *File类的构造方法+常用方法
@@ -11,14 +10,14 @@ import java.io.IOException;
 public class FileDemo1 {
     public static void main(String[] args) throws IOException {
         //获取路径分隔符
-        String pathSeparator= File.pathSeparator;
-        System.out.println(pathSeparator);
+//        String pathSeparator= File.pathSeparator;
+//        System.out.println(pathSeparator);
 
 
         //获取文件名称分隔符  windows操作系统:反斜杠  linux操作系统：正斜杠
         //因为不同操作系统文件分隔符有区别，所以以后在写文件路径的时候，不能写死，可以用File.separator获取然后拼接
-        String separator=File.separator;
-        System.out.println(separator);
+//        String separator=File.separator;
+//        System.out.println(separator);
 
 //        savePath();
 
@@ -32,7 +31,12 @@ public class FileDemo1 {
 
 //        createFile();
 
-        createFileDelete();
+//        createFileDelete();
+        String file="上传的文件111";
+        String path="E:\\application\\file.txt";
+        addFile(file,path);
+        String path2="E:\\application\\file2.txt";
+        addFile2(file,path2);
     }
 
    //构造方法
@@ -105,6 +109,39 @@ public class FileDemo1 {
 
 
     }
+
+    //、写入文件  覆盖
+    public static boolean addFile(String string,String path) {
+        PrintStream stream=null;
+        try {
+            stream=new PrintStream(path);//写入的文件path
+            stream.print(string);//写入的字符串
+            return true;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    //非覆盖的写入文件，在原有的文件内容后面继续写入
+    public static boolean addFile2(String string,String path2) {
+        //文件的续写
+        FileWriter fw = null;
+        try {
+            fw = new FileWriter(path2,true);
+            //写入换行
+            fw.write("\r\n");//Windows平台下用\r\n，Linux/Unix平台下用\n
+            //续写一个hello world!
+            fw.write(string);
+            fw.close();
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
 
 
 

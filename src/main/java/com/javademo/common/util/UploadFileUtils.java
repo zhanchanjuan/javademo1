@@ -1,4 +1,4 @@
-package com.javademo.util;
+package com.javademo.common.util;
 
 
 import org.springframework.web.multipart.MultipartFile;
