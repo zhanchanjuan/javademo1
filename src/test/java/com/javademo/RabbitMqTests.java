@@ -1,7 +1,8 @@
 package com.javademo;
 
-import com.javademo.common.constants.RabbitMqConstants;
+
 import com.javademo.common.util.RabbitSender;
+import com.javademo.entity.system.Order;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,12 +16,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.swing.*;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * @author shuyi
@@ -37,8 +36,11 @@ public class RabbitMqTests {
     @Autowired
     private AmqpAdmin amqpAdmin;
 
+
     @Autowired
     private RabbitSender rabbitSender;
+
+    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 
     /**
      * 测试直接模式发送
@@ -97,6 +99,7 @@ public class RabbitMqTests {
         System.out.println("接收的队列消息是{}"+o.getClass());
         System.out.println("接收的队列消息数量是{}"+o.toString());
     }
+
 
 
 

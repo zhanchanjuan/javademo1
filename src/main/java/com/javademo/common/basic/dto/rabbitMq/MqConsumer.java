@@ -26,7 +26,7 @@ public class MqConsumer {
         Connection connection=connectionFactory.newConnection();
         //建立通道
         Channel channel=connection.createChannel();
-        //声明 直流交换机
+        //声明 direct 直流交换机
         String exchangeName="direct_exchange";
         String exchangeType="direct";
         String queueName="direct_queue1";

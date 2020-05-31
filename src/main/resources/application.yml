@@ -13,6 +13,23 @@ spring:
     username: guest
     password: guest
     virtual-host: /
+    connection-timeout: 15000
+    listener:
+      simple:
+        acknowledge-mode: manual
+        concurrency: 5
+        max-concurrency: 10
+      order:
+        queue:
+             name=queue-2
+             durable=true
+        exchange:
+              name=exchange-2
+              durable=true
+              type=topic
+              ignoreDeclarationException=true
+        key:
+            springboot.*
   thymeleaf:
       enabled: true
       encoding: utf-8
