@@ -18,7 +18,7 @@ public class ThreadPoolTest02 {
          */
         Executors.newFixedThreadPool(11);
 
-        for(int i=0;i<3;i++){
+        for(int i=0;i<6;i++){
             ThreadPoolDemo02 threadPoolDemo02=new ThreadPoolDemo02(i);
             executor.execute(threadPoolDemo02);
             System.out.println("线程池中的线程数目："+executor.getPoolSize()+

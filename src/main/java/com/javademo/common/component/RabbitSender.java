@@ -1,6 +1,7 @@
 package com.javademo.common.component;
 
 import com.javademo.entity.system.Order;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ public class RabbitSender {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
+    @Autowired
+    private AmqpTemplate amqpTemplate;
+
     private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 
 
@@ -34,7 +38,7 @@ public class RabbitSender {
     final ConfirmCallback confirmCallback = new ConfirmCallback() {
         @Override
         public void confirm(CorrelationData correlationData, boolean ack, String cause) {
-            System.err.println("发送成功correlationData: " + correlationData);
+            System.out.println("发送成功correlationData: " + correlationData);
             System.err.println("ack: " + ack);
             if(!ack){
                 System.err.println("异常处理....");
@@ -55,6 +59,7 @@ public class RabbitSender {
     //支付成功--->发送短信
     //发送消息方法调用: 构建Message消息
     public void send(Object message, Map<String, Object> properties) throws Exception {
+
         MessageHeaders mhs = new MessageHeaders(properties);
         Message msg = MessageBuilder.createMessage(message, mhs);
         rabbitTemplate.setConfirmCallback(confirmCallback);
@@ -62,6 +67,7 @@ public class RabbitSender {
         //id + 时间戳 全局唯一
         CorrelationData correlationData = new CorrelationData("1234567890");
         rabbitTemplate.convertAndSend("exchange-1", "springboot.abc", msg, correlationData);
+
     }
 
     //支付成功--->订单入库消息发出
@@ -73,19 +79,5 @@ public class RabbitSender {
         CorrelationData correlationData = new CorrelationData("0987654321");
         rabbitTemplate.convertAndSend("exchange-2", "springboot.def", order, correlationData);
     }
-
-    public static void main(String[] args) throws Exception{
-        RabbitSender rabbitSender=new RabbitSender();
-        Map<String, Object> properties = new HashMap<>();
-        properties.put("number", "12345");
-        properties.put("send_time", simpleDateFormat.format(new Date()));
-        rabbitSender.send("Hello RabbitMQ For Spring Boot!", properties);
-
-//        com.javademo.entity.system.Order order = new com.javademo.entity.system.Order("001", "第一个订单");
-//        rabbitSender.sendOrder(order);
-    }
-
-
-
 
 }

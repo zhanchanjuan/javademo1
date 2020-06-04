@@ -19,17 +19,8 @@ spring:
         acknowledge-mode: manual
         concurrency: 5
         max-concurrency: 10
-      order:
-        queue:
-             name=queue-2
-             durable=true
-        exchange:
-              name=exchange-2
-              durable=true
-              type=topic
-              ignoreDeclarationException=true
-        key:
-            springboot.*
+      msg:
+        queues: 11111111queue,22222222queue,33333333queue
   thymeleaf:
       enabled: true
       encoding: utf-8
@@ -69,3 +60,6 @@ file:
     bucket-name: njdeveloptest  #桶名
     domain: https://njdeveloptestobs.zhizaoyun.wang
     preview-time-out: 3600
+app-notice:
+  # 队列名称
+  queue-name: 11111111queue,22222222queue,33333333queue

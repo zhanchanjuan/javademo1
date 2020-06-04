@@ -18,7 +18,7 @@ import java.util.UUID;
  * @date 2020/5/19
  */
 @Component
-public class RabbitSender {
+public class RabbitSender111 {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;

@@ -117,7 +117,7 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.6.1</version>
+			<version>1.7.16</version>
 		</dependency>
 		<!--利用jsch实现和远程服务器的交互，实现上传下载文件-->
 		<dependency>

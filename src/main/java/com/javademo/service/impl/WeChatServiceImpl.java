@@ -67,6 +67,7 @@ public class WeChatServiceImpl implements WeChatService {
         Map<String, Object> map = restTemplate.postForEntity(UserCommonConstants.WECHAT_CREATE_TICKET_URL + token,
                 JSONObject.toJSONString(params), Map.class).getBody();
         log.info("map打印出来是{}——————————",map);
+
         weChatOfficialAccountQRCodeDto.setExpireSeconds((Integer) map.get("expire_seconds"));
         weChatOfficialAccountQRCodeDto.setUrl((String) map.get("url"));
         weChatOfficialAccountQRCodeDto.setImageUrl(UserCommonConstants.WECHAT_SHOW_QR_CODE_URL + map.get("ticket"));

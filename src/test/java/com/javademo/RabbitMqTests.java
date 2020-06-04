@@ -1,8 +1,8 @@
 package com.javademo;
 
 
-import com.javademo.common.util.RabbitSender;
-import com.javademo.entity.system.Order;
+import com.javademo.common.component.RabbitSender;
+import com.javademo.common.util.RabbitSender111;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.swing.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -36,9 +35,12 @@ public class RabbitMqTests {
     @Autowired
     private AmqpAdmin amqpAdmin;
 
-
     @Autowired
     private RabbitSender rabbitSender;
+
+
+    @Autowired
+    private RabbitSender111 rabbitSender111;
 
     private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 
@@ -98,6 +100,15 @@ public class RabbitMqTests {
         Object o=rabbitTemplate.receiveAndConvert("myDemo.queue");
         System.out.println("接收的队列消息是{}"+o.getClass());
         System.out.println("接收的队列消息数量是{}"+o.toString());
+    }
+
+    @Test
+    public void send()throws Exception{
+        Object msg="订单成功，第一条短信11111";
+        Map<String, Object> properties =new HashMap<>();
+        properties.put("id","111111");
+        properties.put("send_time", simpleDateFormat.format(new Date()));
+        rabbitSender.send(msg,properties);
     }
 
 

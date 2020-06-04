@@ -16,7 +16,7 @@ public class MqDltQueueProducer {
         Connection connection = connectionFactory.newConnection();
         Channel channel = connection.createChannel();
 
-        String exchangeName="test_dlx_exchange";
+        String exchangeName="test_dlx_exchange1";
         String routingKey="consumer.save";
 
         String msg = "Hello RabbitMQ DLX Message";

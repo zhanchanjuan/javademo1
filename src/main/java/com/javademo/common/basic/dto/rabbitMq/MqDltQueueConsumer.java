@@ -26,27 +26,25 @@ public class MqDltQueueConsumer {
         Connection connection=connectionFactory.newConnection();
         Channel channel=connection.createChannel();
 
-        String exchangeName="test_dlx_exchange";
+        String exchangeName="test_dlx_exchange1";
         String exchangeType="topic";
-        String queueName="test_dlx_queue";
+        String queueName="test_dlx_queue1";
         String routingKey="consumer.#";
 
         //通道里声明一个交换机
         channel.exchangeDeclare(exchangeName,exchangeType,true,false,null);
         Map<String,Object> agruments=new HashMap<String,Object>();
-        agruments.put("x-dead-letter-exchange","dlx_exchange");
+        agruments.put("x-dead-letter-exchange","dlx_exchange1");
         //声明一个队列--将设置的agruments属性设置到声明队列上
         channel.queueDeclare(queueName,true,false,false,agruments);
         //建立绑定关系
         channel.queueBind(queueName,exchangeName,routingKey);
         //进行死信队列声明
-        channel.exchangeDeclare("dlx.exchange", exchangeType, true, false, null);
-        channel.queueDeclare("dlx.queue", true, false, false, null);
-        channel.queueBind("dlx.queue", "dlx.exchange", "#");
+        channel.exchangeDeclare("dlx.exchange1", exchangeType, true, false, null);
+        channel.queueDeclare("dlx.queue1", true, false, false, null);
+        channel.queueBind("dlx.queue1", "dlx.exchange1", "#");
 
         channel.basicConsume(queueName, true, new MyMqConsumer(channel));
-
-
 
     }
 }

@@ -48,6 +48,7 @@ public class MqConsumer {
         channel.queueDeclare(queueName,false,false,false,null);
         //建立绑定关系
         channel.queueBind(queueName,exchangeName,routingKey);
+
         //创建消费者消费消息
 
 
